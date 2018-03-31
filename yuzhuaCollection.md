@@ -926,7 +926,7 @@ scrollbar操控滚动条
 	    ]
 
 
-
+#### 分享和收藏可以进入其他页面的链接：http://www.jiathis.com/share ####
 
 
 
