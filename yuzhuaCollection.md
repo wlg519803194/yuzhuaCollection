@@ -929,5 +929,101 @@ scrollbar操控滚动条
 #### 分享和收藏可以进入其他页面的链接：http://www.jiathis.com/share ####
 
 
+### 一段实现3d动画的代码（研究用） ###
+
+    <!DOCTYPE html>
+	<html>
+	<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		.wrap {
+		    perspective: 800px;
+		    perspective-origin: 50% 100px;
+		}
+		.cube {
+		    position: relative;
+		    width: 200px;
+		    transform-style: preserve-3d;
+		}
+		.cube div {
+		    position: absolute;
+		    width: 200px;
+		    height: 200px;
+		}
+		.back {
+		    transform: translateZ(-100px) rotateY(180deg);
+		}
+		.right {
+		    transform: rotateY(-270deg) translateX(100px);
+		    transform-origin: top right;
+		}
+		.left {
+		    transform: rotateY(270deg) translateX(-100px);
+		    transform-origin: center left;
+		}
+		.top {
+		    transform: rotateX(-90deg) translateY(-100px);
+		    transform-origin: top center;
+		}
+		.bottom {
+		    transform: rotateX(90deg) translateY(100px);
+		    transform-origin: bottom center;
+		}
+		.front {
+		    transform: translateZ(100px);
+		}
+		@keyframes spin {
+		    from { transform: rotateY(0); }
+		    to { transform: rotateY(360deg); }
+		}
+		 
+		.cube {
+		    animation: spin 5s infinite linear;
+		}
+		@keyframes spin-vertical {
+		    from { transform: rotateX(0); }
+		    to { transform: rotateX(-360deg); }
+		}
+		 
+		.cube-wrap.vertical .cube {
+		    margin: 0 auto; /* keeps the cube centered */
+		 
+		    transform-origin: 0 100px;
+		    animation: spin-vertical 5s infinite linear;
+		}
+		 
+		.cube-wrap.vertical .top {
+		    transform: rotateX(-270deg) translateY(-100px);
+		}
+		 
+		.cube-wrap.vertical .back {
+		    transform: translateZ(-100px) rotateX(180deg);
+		}
+		 
+		.cube-wrap.vertical .bottom {
+		    transform: rotateX(-90deg) translateY(100px);
+		}
+		.wrap {
+		    /* no more perspective */
+		    perspective: none;
+		    perspective-origin: 0 0;
+		}
+	</style>
+	</head>
+	<body>
+	<div class="wrap">
+	    <div class="cube">
+	        <div class="front">front</div>
+	        <div class="back">back</div>
+	        <div class="top">top</div>
+	        <div class="bottom">bottom</div>
+	        <div class="left">left</div>
+	        <div class="right">right</div>
+	    </div>
+	</div>
+	</body>
+	</html>
+
 
 ## 弄的很挫，只是收集，低级，勿喷 ##
