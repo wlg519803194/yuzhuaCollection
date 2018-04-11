@@ -1,3 +1,10 @@
+### github上传教程 ###	
+
+https://www.cnblogs.com/cxk1995/p/5800196.html
+
+
+
+### 收集 ###
 	fadeTo======>jq中让元素淡出（毫秒，淡出的透明度）
 	hide（）====> jq中让元素隐藏
 
