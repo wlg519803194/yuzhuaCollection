@@ -1171,4 +1171,29 @@ scrollbar操控滚动条
 
 
 
+#### 表单提交后怎么接收后台返回的数据 ####
+
+	$("#form1").bind("submit", function(){  
+		var file=$("#file_sc").val();
+		if(file == ""){  
+			alert("请选择文件！！！");
+			return false;  
+		}  
+	});
+
+
+#### 提交表单时的验证 ####
+
+	 $("#form1").bind("submit", function(){  
+		var file=$("#file_sc").val();
+		if(file == ""){  
+			alert("请选择文件！！！");
+			return false;  
+		}  
+	});
+
+
+
+
+
 ## 弄的很挫，只是收集，低级，勿喷 ##
