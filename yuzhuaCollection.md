@@ -1173,13 +1173,14 @@ scrollbar操控滚动条
 
 #### 表单提交后怎么接收后台返回的数据 ####
 
-	$("#form1").bind("submit", function(){  
-		var file=$("#file_sc").val();
-		if(file == ""){  
-			alert("请选择文件！！！");
-			return false;  
-		}  
-	});
+	$(function(){  
+	    /** 验证文件是否导入成功  */  
+	    $("#form1").ajaxForm(function(data){    
+	        if(data=="1"){  
+	            alert("提交成功！");     
+	        }  
+	    });       
+	}); 
 
 
 #### 提交表单时的验证 ####
@@ -1253,6 +1254,33 @@ scrollbar操控滚动条
         }
       }, false)
     }
+
+
+#### Blob对象
+
+----------
+*Blob对象是一个不可改变、最原始数据的类文件对象*
+
+	Blob不一定是一个js原生格式的数据
+	FIle接口基于Blob，继承了Blob功能并将其扩展使其支持用户系统上的文件
+
+
+
+#### File ####
+
+*File对象,就是一个文件,比如我用input type="file"标签来上传文件,那么里面的每个文件都是一个File对象.*
+
+
+	File.webkitRelativePath是目录选择器，是一个只读选择器
+
+	File.webkitRelativePath的使用的时候，必须要在input标签上面加上webkitdirectory属性
+
+
+
+
+
+
+
 
 
 
