@@ -1278,6 +1278,28 @@ scrollbar操控滚动条
 
 
 
+#### vue.js的自定义指令 ####
+
+	// 注册一个全局自定义指令 `v-focus`
+	Vue.directive('focus', {
+	  // 当被绑定的元素插入到 DOM 中时……
+	  inserted: function (el) {
+	    // 聚焦元素
+	    el.focus()
+	  }
+	})
+
+	可以简写为
+
+	Vue.directive('focus', function (el, binding) {
+	  el.focus()
+	})
+
+	function中接收的参数有4个  el、binding、vnode 和 oldVnode
+
+	像inserted一样的钩子函数还有：bind，update，inserted，
+	componentUpdated，unbind
+
 
 
 
