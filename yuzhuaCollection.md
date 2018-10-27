@@ -1307,8 +1307,106 @@ scrollbar操控滚动条
 	IScroll
 
 
+#### 将超出的部分转换成... ####
+	
+	function changeDot () {
+      var ele = document.querySelectorAll('.greatbenefit_lists_eachdetaila span')
+      for (let i = 0; i < ele.length; i++) {
+        var getLen = GetLength(ele[i].innerText)
+        if (getLen > 65) {
+          ele[i].innerText = cutstr(ele[i].innerText, 65)
+        }
+      }
+
+      function GetLength (str) {
+        // <summary>获得字符串实际长度，中文2，英文1</summary>
+        // <param name="str">要获得长度的字符串</param>
+        var realLength = 0
+        var len = str.length
+        var charCode = -1
+        for (var i = 0; i < len; i++) {
+          charCode = str.charCodeAt(i)
+          if (charCode >= 0 && charCode <= 128) realLength += 1
+          else realLength += 2
+        }
+        return realLength
+      }
+      // js截取字符串，中英文都能用
+      // 如果给定的字符串大于指定长度，截取指定长度返回，否者返回源字符串。
+      // 字符串，长度
+      /**
+       * js截取字符串，中英文都能用
+       * @param str：需要截取的字符串
+       * @param len: 需要截取的长度
+       */
+      function cutstr (str, len) {
+        var strLength = 0
+        var strLen = 0
+        var strCut = ''
+        strLen = str.length
+        for (var i = 0; i < strLen; i++) {
+          var a = str.charAt(i)
+          strLength++
+          if (escape(a).length > 4) {
+            // 中文字符的长度经编码之后大于4
+            strLength++
+          }
+          strCut = strCut.concat(a)
+          if (strLength >= len) {
+            strCut = strCut.concat('...')
+            return strCut
+          }
+        }
+        // 如果给定字符串小于指定长度，则返回源字符串
+        if (strLength < len) {
+          return str
+        }
+      }
+    }
 
 
+#### 返回顶部 ####
 
+	window.onload = function(){
+	//获取相关
+	var mybtn = document.getElementById("btn");
+	var Time1 = null;
+	var isTop = true;
+
+	mybtn.onclick = function(){
+		//设置定时器
+		Time1 = setInterval(function(){
+			var osTop = document.body.scrollTop||document.documentElement.scrollTop;
+			//ceil向上取整，floor向下取整
+			var speed = Math.ceil(osTop/2);
+			//做一个变换速度的回到顶部效果
+			document.body.scrollTop = document.documentElement.scrollTop = osTop - speed;
+			if(osTop <= 0){
+				//清除定时器
+				clearInterval(Time1);
+			}
+			isTop = true ;
+		}, 100)
+	}
+
+	//页面滚动自动触发：
+	window.onscroll = function(){
+		//获取页面可视区高度和滚动高度
+		var osTop = document.body.scrollTop||document.documentElement.scrollTop;
+		//这两个获取滚动的方法可以兼容多种浏览器
+		var clientHeight = document.documentElement.clientHeight;
+		//对回到顶部的隐藏和显示，在css中一开始可以设置为隐藏
+		if (osTop>clientHeight) {
+			mybtn.style.display = "block"
+		}
+		else{
+			mybtn.style.display = "none"
+		}
+		if (!isTop) {
+			clearInterval(Time1);
+		}
+		isTop = false;
+	}
+}
 
 ## 弄的很挫，只是收集，低级，勿喷 ##
