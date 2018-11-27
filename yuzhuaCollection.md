@@ -1409,4 +1409,15 @@ scrollbar操控滚动条
 	}
 }
 
+
+
+
+
+#### 在h5里面的input，会触发手机自带键盘，以下代码可以取消 ####
+	
+		$('input').focus(() => {
+			document.activeElement.blur()
+		})
+		
+
 ## 弄的很挫，只是收集，低级，勿喷 ##
