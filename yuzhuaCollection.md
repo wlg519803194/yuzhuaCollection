@@ -1442,6 +1442,9 @@ scrollbar操控滚动条
 
 	控制台输入  npm install @babel/core @babel/preset-env 命令
 
+#### 刚刚chrome浏览器提示object is not a function ####
+
+	在vue中有可能是文件名，id或者方法重复
 
 
 
