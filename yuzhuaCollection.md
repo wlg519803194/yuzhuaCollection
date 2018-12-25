@@ -1431,6 +1431,18 @@ scrollbar操控滚动条
 	this.$forceUpdate()  这个是手动更新
 
 
+#### webpack 命令 Module build failed (from ./node_modules/babel-loader/lib/index.js) 错误问题解决方案 ####
+
+
+1. 在项目中运行的时候出现报错，错误为Module build failed (from ./node_modules/babel-loader/lib/index.js)
+
+
+2. 解决方案：
+
+
+	控制台输入  npm install @babel/core @babel/preset-env 命令
+
+
 
 
 
