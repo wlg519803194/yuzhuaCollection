@@ -1448,6 +1448,23 @@ scrollbar操控滚动条
 
 
 
+#### 获取未来某个时间的时间戳 ####
+
+    // 获取某个时间格式的时间戳
+
+	var stringTime = "2014-07-10 10:21:12";
+
+	var timestamp2 = Date.parse(new Date(stringTime));
+
+	// 如果想获取的时间戳为13位那就不用除1000
+
+	timestamp2 = timestamp2 / 1000;
+
+	//2014-07-10 10:21:12的时间戳为：1404958872
+
+	console.log(stringTime + "的时间戳为：" + timestamp2);
+
+
 
 
 ## 弄的很挫，只是收集，低级，勿喷 ##
