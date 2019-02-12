@@ -140,3 +140,26 @@
 #### 关于keywords,title,descritpion ####
 
 - 如果修改后没有改变，则修改一些数据就能改变
+
+
+
+
+#### 往Vue注册全局组件 ####
+
+
+- 使用Install方法
+	- example
+		
+			import Button from './button'
+		
+			export default {
+		
+				install(Vue) {
+		
+					Vue.component('Button的组件名字', Button)
+		
+				}
+		
+			}
+
+	
