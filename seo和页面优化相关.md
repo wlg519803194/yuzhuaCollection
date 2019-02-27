@@ -219,4 +219,4 @@ SEO优化权重与投票机制的规则：百度释放的蜘蛛，在通过各�
 
 
 
-**https://github.com/GoogleChrome/lighthouse 这是一个测试浏览器性能的插件**
+**[https://github.com/GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse "https://github.com/GoogleChrome/lighthouse") 这是一个测试浏览器性能的插件**
