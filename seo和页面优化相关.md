@@ -227,6 +227,8 @@ SEO优化权重与投票机制的规则：百度释放的蜘蛛，在通过各�
 
 **在高并发的情况下可以考虑使用缓存，而缓存策略的使用需要视场景而定，这里不再赘述，还可以考虑使用pm2开启集群模式去管理我们的进程，从而满足更高的并发。**
 
+**目前所有主流浏览器都不支持 time 标签。**
+
 
 
 **[https://github.com/GoogleChrome/lighthouse](https://github.com/GoogleChrome/lighthouse "https://github.com/GoogleChrome/lighthouse") 这是一个测试浏览器性能的插件**
